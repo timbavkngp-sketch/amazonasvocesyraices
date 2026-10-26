@@ -15,9 +15,8 @@ header{
 background:#1B5E20;
 padding:12px 18px;
 text-align:center;
-position:sticky;
-top:0;
-z-index:100;
+position:relative;
+z-index:1;
 }
 
 header .logo{
@@ -35,11 +34,15 @@ color:white;
 
 nav{
 margin-top:15px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
 }
 
 nav a{
 color:white;
-margin:15px;
+margin:0 15px;
 text-decoration:none;
 font-weight:bold;
 }
@@ -49,7 +52,8 @@ color:#FFD54F;
 }
 
 .hero{
-height:80vh;
+min-height:65vh;
+padding:60px 10%;
 display:flex;
 flex-direction:column;
 justify-content:center;
@@ -81,7 +85,17 @@ font-weight:bold;
 }
 
 section{
-padding:70px 10%;
+padding:56px 10%;
+scroll-margin-top:12px;
+}
+
+section:not(.hero){
+min-height:45vh;
+}
+
+section h2{
+margin-bottom:18px;
+line-height:1.25;
 }
 
 .cards{
@@ -123,7 +137,14 @@ text-align:center;
 }
 
 @media(max-width:600px){
- nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;}
- nav a{margin:0 7px;font-size:14px;}
+ header{padding:12px;}
+ header .logo{width:min(340px, 100%);}
+ nav{gap:10px;}
+ nav a{margin:0 5px;font-size:14px;}
+ section{padding:42px 6%;}
+ section:not(.hero){min-height:40vh;}
+ .hero{min-height:60vh;}
  .hero h2{font-size:32px;}
+ .hero p{font-size:18px;margin:16px 0;}
+ .galeria{grid-template-columns:1fr;}
 }
